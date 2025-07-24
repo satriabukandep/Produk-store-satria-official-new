@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Satria Official Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+    header {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    header video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    header .overlay {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff69b4;
+    }
+    header p {
+      color: #e0e0e0;
+    }
+
+    .slider {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+    .slider img {
+      width: 160px;
+      border-radius: 10px;
+    }
+
+    .sc-section {
+      background: #1e1e1e;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .sc-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .sc-buttons button {
+      background: linear-gradient(to right, #41a4ff, #c871ff);
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .collapsible {
+      background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffff);
+      background-size: 200% 200%;
+      animation: gradientBtn 3s ease infinite;
+      color: white;
+      cursor: pointer;
+      padding: 14px;
+      width: 100%;
+      border: none;
+      font-size: 1.1em;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      color: #cbd5e1;
+      border-radius: 10px;
+      margin-top: 5px;
+    }
+    .sc-info {
+      background: #333;
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+    }
+body {
+  background: #121221;
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+.collapsible-container {
+  padding: 20px;
+  border-radius: 20px;
+  background: #1a1a2e;
+  max-width: 500px;
+  margin: auto;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-link {
+  padding: 12px 20px;
+  background: linear-gradient(to right, #b06ab3, #4568dc);
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  min-width: 120px;
+  transition: 0.3s;
+}
+
+.btn-link:hover {
+  filter: brightness(1.1);
+}
+
+.sc-info {
+  margin-top: 20px;
+  display: none;
+  background: #2a2a3d;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.sc-info p {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sc-info ul {
+  color: #ccc;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.sc-info a button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #6d6eff, #c871ff);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.price-row {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.price-row a {
+  color: #00ffff;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.sc-buttons button {
+  background: linear-gradient(to right, #6d6eff, #c871ff);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 8px 0;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      gap: 12px;
+    }
+    .sc-info button {
+      margin-top: 10px;
+      background: linear-gradient(to right, #41a4ff, #c871ff);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Video -->
+  <header>
+    <video autoplay muted loop>
+      <source src="https://files.catbox.moe/cwgf0d.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <h1>Satria Official Store</h1>
+      <p>Solusi Kebutuhan Digital Anda</p>
+    </div>
+  </header>
+
+<!-- Jasa Bug WhatsApp -->
+  <div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+    <h2 style="color:#b58eff;">Jasa Bug WhatsApp</h2>
+    <div style="background:#ff5f86;display:inline-block;padding:5px 15px;border-radius:20px;font-weight:bold;margin:10px 0;">Rp 2k/nomer</div>
+    <ul style="list-style:none;padding-left:0;text-align:left;margin-top:10px;">
+      <li>✅ Gak c1 reff</li>
+      <li>✅ Bug delay, fc, stuk logo dll</li>
+      <li>✅ Gw kirim bukti bug ke lu</li>
+      <li>✅ DLL</li>
+    </ul>
+    <a href="https://t.me/satriabukanjomoks?text=bg+mau+order+jasa+bug+WhatsApp" target="_blank">
+      <button style="margin-top:15px;background:#6d6eff;padding:10px 20px;border:none;border-radius:10px;color:white;font-weight:bold;cursor:pointer;">
+        Pesan Sekarang
+      </button>
+    </a>
+  </div>
+
+<!-- Sepek panel Pterodactyl -->
+  <div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+    <h2 style="color:#b58eff;">Sepek panel Pterodactyl</h2>
+    <div style="background:#ff5f86;display:inline-block;padding:5px 15px;border-radius:20px;font-weight:bold;margin:10px 0;">Panel Pterodactyl</div>
+    <ul style="list-style:none;padding-left:0;text-align:left;margin-top:10px;">
+      <li>✅ R16 c4</li>
+      <li>✅ 100% priv & no intip</li>
+      <li>✅ Garansi 20d</li>
+      <li>✅ anti delay </li>
+      <li>✅ anti und panel </li>
+    </ul>
+    </a>
+  </div>
+
+<!-- Panel Buttons Section -->
+<div class="sc-section">
+  <h2 style="color:#b58eff; text-align:center; margin-bottom:20px;">List Harga Panel Pterodactyl</h2>
+  <div class="sc-buttons" style="display:grid;grid-template-columns:repeat(2, 1fr);gap:10px;">
+    <button onclick="showSC('Panel 3gb', 3000)">Panel 3gb</button>
+    <button onclick="showSC('panel 4gb', 4000)">Panel 4gb</button>
+    <button onclick="showSC('panel 5gb', 5000)">panel 5gb</button>
+    <button onclick="showSC('panel 6gb', 6000)">panel 6gb</button>
+    <button onclick="showSC('panel 7gb', 7000)">Panel 7gb</button>
+    <button onclick="showSC('panel 8gb', 8000)">Panel 8gb</button>
+    <button onclick="showSC('panel 9gb', 9000)">Panel 9gb</button>
+    <button onclick="showSC('Panel 10gb', 10000)">Panel 10gb</button>
+    <button onclick="showSC('Panel unli', 10000)">Panel unli</button>
+  </div>
+
+  <div class="sc-info" id="scInfo" style="margin-top:20px; display:none; background:#2a2a3d; padding:15px; border-radius:12px;">
+    <p id="scText" style="font-size:16px; font-weight:bold; color:white; text-align:center;"></p>
+    <ul id="scDesc" style="text-align:left; color:#ccc; margin-top:10px; font-size:14px;"></ul>
+    <a id="buyBtn" href="#" target="_blank" style="display:flex; justify-content:center; margin-top:10px;">
+      <button style="padding:8px 20px; border:none; border-radius:10px; background:linear-gradient(to right, #6d6eff, #c871ff); color:white; font-weight:bold;">Buy</button>
+    </a>
+  </div>
+</div>
+
+<script>
+  function toggleML() {
+    const list = document.getElementById("mlList");
+    list.style.display = list.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+<script>
+  function toggleML() {
+    const list = document.getElementById("mlList");
+    list.style.display = list.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+<script>
+  function toggleQris() {
+    const el = document.getElementById("qrisContent");
+    el.style.display = el.style.display === "none" ? "block" : "none";
+  }
+
+  function toggleEwallet() {
+    const el = document.getElementById("ewalletContent");
+    el.style.display = el.style.display === "none" ? "block" : "none";
+  }
+
+  function toggleML() {
+    const list = document.getElementById("mlList");
+    list.style.display = list.style.display === "none" ? "block" : "none";
+  }
+
+  function togglePanel() {
+    const panel = document.getElementById("panelList");
+    panel.style.display = panel.style.display === "none" ? "block" : "none";
+  }
+
+  function showSC(name, price) {
+    const scText = document.getElementById("scText");
+    const scInfo = document.getElementById("scInfo");
+    const buyBtn = document.getElementById("buyBtn");
+
+    scText.innerText = `${name} - Rp ${price.toLocaleString('id-ID')}`;
+    buyBtn.href = `https://t.me/satriabukanjomoks?text=Saya%20ingin%20beli%20${encodeURIComponent(name)}%20seharga%20Rp%20${price}`;
+    scInfo.style.display = "block";
+  }
+</script>
+
+
+<!-- Panel Pterodactyl -->
+<div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+  <button onclick="togglePanel()" style="background: linear-gradient(to right, #7f00ff, #e100ff); color: white; padding: 10px 20px; border: none; border-radius: 20px; font-size: 16px; font-weight: bold; cursor: pointer;">
+    ▶ All jasa
+  </button>
+
+  <div id="panelList" style="display:none; margin-top:20px;">
+
+    <!-- Item -->
+    <div style="margin-bottom:15px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span>Jasa buat web hosting = Rp 30.000</span>
+        <a href="https://t.me/satriabukanjomoks?text=Bg+buy+sc+jasa+buat+web+hosting" target="_blank">
+          <button style="background: linear-gradient(to right, #41a4ff, #c871ff); border: none; padding: 5px 15px; border-radius: 10px; color: white; font-weight: bold;">Buy</button>
+        </a>
+      </div>
+      <p style="font-size:13px; color:#ccc; margin-top:5px;">bisa bebas req fitur atau bawa contoh Dapet html no enc dan 100%punya lu gw upload jadi link juga bisa</p>
+    </div>
+
+    <!-- Item -->
+    <div style="margin-bottom:15px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span>Jasa buat apk bug = Rp 100.000</span>
+        <a href="https://t.me/satriabukanjomoks?text=bg+mau+beli+jasa+buat+apk+bug" target="_blank">
+          <button style="background: linear-gradient(to right, #41a4ff, #c871ff); border: none; padding: 5px 15px; border-radius: 10px; color: white; font-weight: bold;">Buy</button>
+        </a>
+      </div>
+      <p style="font-size:13px; color:#ccc; margin-top:5px;">Di buat dari nol dapet no enc free api dari gw dll tannya aja</p>
+    </div>
+
+    <!-- Item -->
+    <div style="margin-bottom:15px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span>Jasa buat sc bug = Rp 30.000</span>
+        <a href="https://t.me/satriabukanjomoks?text=bg+beli+jasa+buat+sc+bug" target="_blank">
+          <button style="background: linear-gradient(to right, #41a4ff, #c871ff); border: none; padding: 5px 15px; border-radius: 10px; color: white; font-weight: bold;">Buy</button>
+        </a>
+      </div>
+      <p style="font-size:13px; color:#ccc; margin-top:5px;">Sc di buat dari 0 dan sc 100% jadi punya lu lu bisa bawa func sendiri atau dari gw</p>
+    </div>
+
+    <!-- Item -->
+    <div style="margin-bottom:15px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span>Buat sc cpanel = Rp 10.000</span>
+        <a href="https://t.me/satriabukanjomoks?text=bg+buy+jasa+buat+sc+cpanel" target="_blank">
+          <button style="background: linear-gradient(to right, #41a4ff, #c871ff); border: none; padding: 5px 15px; border-radius: 10px; color: white; font-weight: bold;">Buy</button>
+        </a>
+      </div>
+      <p style="font-size:13px; color:#ccc; margin-top:5px;">Sc di buat dari nol dan lu bisa req fitur dan sc 100% jadi punnya lu</p>
+    </div>
+
+    <!-- Item -->
+    <div style="margin-bottom:15px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span>Riname all sc = Rp 5.000</span>
+        <a href="https://t.me/satriabukanjomoks?text=bg+mau+buy+jasa+riname+sc" target="_blank">
+          <button style="background: linear-gradient(to right, #41a4ff, #c871ff); border: none; padding: 5px 15px; border-radius: 10px; color: white; font-weight: bold;">Buy</button>
+        </a>
+      </div>
+      <p style="font-size:13px; color:#ccc; margin-top:5px;">Di riname kan sampek akar akar nya</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- sc Nted-->
+  <div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+    <h2 style="color:#b58eff;">Nted via apk</h2>
+    <div style="background:#ff5f86;display:inline-block;padding:5px 15px;border-radius:20px;font-weight:bold;margin:10px 0;">Rp 30k access perma</div>
+    <ul style="list-style:none;padding-left:0;text-align:left;margin-top:10px;">
+      <li>Force Close WhatsApp Ori<li>
+      <li> Force Close WhatsApp Beta
+      <li>Delay Maker Hard
+      <li>Crash Ios Dan Freeze Iphone
+      <li>Force Close Ui Dan Freeze
+      <li>Dll</li>
+    </ul>
+    <a href="https://t.me/satriabukanjomoks?text=bg+buy+sc+nted+apk" target="_blank">
+      <button style="margin-top:15px;background:#6d6eff;padding:10px 20px;border:none;border-radius:10px;color:white;font-weight:bold;cursor:pointer;">
+        Pesan Sekarang
+      </button>
+    </a>
+  </div>
+
+<!-- Sc Xandros-->
+  <div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+    <h2 style="color:#b58eff;">Sc xandros v3</h2>
+    <div style="background:#ff5f86;display:inline-block;padding:5px 15px;border-radius:20px;font-weight:bold;margin:10px 0;">Rp enc 15k,no enc 30k</div>
+    <ul style="list-style:none;padding-left:0;text-align:left;margin-top:10px;">
+      <li>Delay hard
+      <li>crash ui
+      <li> fc andro 
+      <li>dll </li>
+    </ul>
+    <a href="https://t.me/satriabukanjomoks?text=bg+buy+sc+xandros" target="_blank">
+      <button style="margin-top:15px;background:#6d6eff;padding:10px 20px;border:none;border-radius:10px;color:white;font-weight:bold;cursor:pointer;">
+        Pesan Sekarang
+      </button>
+    </a>
+  </div>
+
+<!-- Sc Gost-->
+  <div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+    <h2 style="color:#b58eff;">Sc Gost v4.2</h2>
+    <div style="background:#ff5f86;display:inline-block;padding:5px 15px;border-radius:20px;font-weight:bold;margin:10px 0;">Rp 10k free up 15k</div>
+    <ul style="list-style:none;padding-left:0;text-align:left;margin-top:10px;">
+      <li>Delay hard
+      <li>crash ui
+      <li> fc andro 
+      <li>dll </li>
+    </ul>
+    <a href="https://t.me/satriabukanjomoks?text=bg+buy+sc+gost" target="_blank">
+      <button style="margin-top:15px;background:#6d6eff;padding:10px 20px;border:none;border-radius:10px;color:white;font-weight:bold;cursor:pointer;">
+        Pesan Sekarang
+      </button>
+    </a>
+  </div>
+
+<!-- sc delta-->
+  <div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+    <h2 style="color:#b58eff;">Sc bug delta v17</h2>
+    <div style="background:#ff5f86;display:inline-block;padding:5px 15px;border-radius:20px;font-weight:bold;margin:10px 0;">Rp 30k free up v18</div>
+    <ul style="list-style:none;padding-left:0;text-align:left;margin-top:10px;">
+      <li>dalay </li>
+      <li>Fc wa beta</li>
+      <li>Fc wa ori</li>
+      <li>Invisible new</li>
+      <li>Dll</li>
+    </ul>
+    <a href="https://t.me/satriabukanjomoks?text=bg+buy+sc+delta" target="_blank">
+      <button style="margin-top:15px;background:#6d6eff;padding:10px 20px;border:none;border-radius:10px;color:white;font-weight:bold;cursor:pointer;">
+        Pesan Sekarang
+      </button>
+    </a>
+  </div>
+
+<!-- Sc anonymous-->
+  <div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+    <h2 style="color:#b58eff;">Po anonymous gen 6</h2>
+    <div style="background:#ff5f86;display:inline-block;padding:5px 15px;border-radius:20px;font-weight:bold;margin:10px 0;">Rp 5k, free up 10k</div>
+    <ul style="list-style:none;padding-left:0;text-align:left;margin-top:10px;">
+      <li>Delay hard
+      <li>delay blank
+      <li>delay ios
+      <li> crash ios
+      <li>crash ui
+      <li> fc andro 
+      <li> fc beta new
+      <li> fc wa ori 
+      <li>fc invisible 
+      <li> bug ch & gb di usahakan
+      <li>dll </li>
+    </ul>
+    <a href="https://t.me/satriabukanjomoks?text=bg+buy+sc+anonymous" target="_blank">
+      <button style="margin-top:15px;background:#6d6eff;padding:10px 20px;border:none;border-radius:10px;color:white;font-weight:bold;cursor:pointer;">
+        Pesan Sekarang
+      </button>
+    </a>
+  </div>
+
+<!-- Sc yurika>
+  <div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+    <h2 style="color:#b58eff;">sc yurika gen 2</h2>
+    <div style="background:#ff5f86;display:inline-block;padding:5px 15px;border-radius:20px;font-weight:bold;margin:10px 0;">Rp 15k</div>
+    <ul style="list-style:none;padding-left:0;text-align:left;margin-top:10px;">
+      <li>fc gb<li>
+      <li> cras iis
+      <li>blank 
+      <li>fc
+      <li>delay invis
+      <li>Dll</li>
+    </ul>
+    <a href="https://t.me/satriabukanjomoks?text=bg+buy+sc+yurika" target="_blank">
+      <button style="margin-top:15px;background:#6d6eff;padding:10px 20px;border:none;border-radius:10px;color:white;font-weight:bold;cursor:pointer;">
+        Pesan Sekarang
+      </button>
+    </a>
+  </div>
+
+<!-- Sc Garsel-->
+  <div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+    <h2 style="color:#b58eff;">Sc Garsel v3</h2>
+    <div style="background:#ff5f86;display:inline-block;padding:5px 15px;border-radius:20px;font-weight:bold;margin:10px 0;">Rp 10k,free up 15k</div>
+    <ul style="list-style:none;padding-left:0;text-align:left;margin-top:10px;">
+      <li>Delay hard
+      <li>crash ui
+      <li> fc andro 
+      <li>dll </li>
+    </ul>
+    <a href="https://t.me/satriabukanjomoks?text=bg+buy+sc+garsel" target="_blank">
+      <button style="margin-top:15px;background:#6d6eff;padding:10px 20px;border:none;border-radius:10px;color:white;font-weight:bold;cursor:pointer;">
+        Pesan Sekarang
+      </button>
+    </a>
+  </div>
+
+<!-- Tambahkan di bagian paling bawah sebelum penutup </body> --><div style="background:#1c1c2b;padding:20px;border-radius:16px;margin:20px;color:white;">
+  <button onclick="toggleQris()" style="background: linear-gradient(to right, #7f00ff, #00bfff); color: white; padding: 10px 20px; border: none; border-radius: 20px; font-size: 16px; font-weight: bold; cursor: pointer; width:100%;">
+    ▶ Qris all payment
+  </button>
+  <div id="qrisContent" style="display: none; margin-top: 20px;">
+    <img src="https://files.catbox.moe/k5lte7.jpg" alt="QRIS" style="width:100%; max-width:320px; display:block; margin:10px auto; border-radius:10px;">
+    <p style="text-align:center; font-size:14px; color:#ccc;">Scan kode QR ini menggunakan aplikasi pembayaran Anda</p>
+  </div>  <button onclick="toggleEwallet()" style="background: linear-gradient(to right, #7f00ff, #00bfff); color: white; padding: 10px 20px; border: none; border-radius: 20px; font-size: 16px; font-weight: bold; cursor: pointer; width:100%; margin-top:10px;">
+    ▶ E-WALLET
+  </button>
+  <div id="ewalletContent" style="display: none; margin-top: 10px; text-align: center; color: #ccc; font-size: 14px;">
+    💰 DANA: 08xxxxxxxxxx<br>
+    💰 OVO: 08xxxxxxxxxx<br>
+    💰 GOPAY: 08xxxxxxxxxx<br>
+    💰 ShopeePay: 08xxxxxxxxxx
+  </div>  <div style="display:flex; justify-content:space-between; margin-top:20px;">
+    <a href="https://t.me/satriabukanjomoks" target="_blank" style="background: linear-gradient(to right, #a166ff, #00bfff); color: white; padding: 10px 20px; border-radius: 16px; text-decoration: none; font-weight: bold; width: 48%; text-align:center;">Kirim bukti tf ke sini</a>
+    <a href="https://whatsapp.com/channel/0029Vb7BDOkD38CYOswRv13e" target="_blank" style="background: linear-gradient(to right, #a166ff, #00bfff); color: white; padding: 10px 20px; border-radius: 16px; text-decoration: none; font-weight: bold; width: 48%; text-align:center;">Channel WhatsApp official</a>
+  </div>
+</div><script>
+  function toggleQris() {
+    const el = document.getElementById("qrisContent");
+    el.style.display = el.style.display === "none" ? "block" : "none";
+  }
+
+  function toggleEwallet() {
+    const el = document.getElementById("ewalletContent");
+    el.style.display = el.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+</body>
+</html>
